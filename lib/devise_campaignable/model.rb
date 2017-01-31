@@ -45,6 +45,12 @@ module Devise
             # Ask the list manager to unsubscribe this devise models email.
             self.class.list_manager.unsubscribe(self.email)
         end
+
+        # Method to unsubscribe the user from the configured mailing list.
+        def unsubscribe_with_email(email)
+            # Ask the list manager to unsubscribe this devise models email.
+            self.class.list_manager.unsubscribe(email)
+        end
         
         # Returns true if it's a valid email for subscribing
         def self.valid_campaign_email?(email)
